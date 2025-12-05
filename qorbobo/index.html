@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Qorbobo Links</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:-apple-system,system-ui,sans-serif;}
+
+    body{
+        min-height:100vh;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:radial-gradient(circle at top, #233b72, #0c1b34, #000818);
+        padding:20px;
+        overflow:hidden;
+    }
+
+    /* Контейнер */
+    .card{
+        width:100%;
+        max-width:460px;
+        padding:26px;
+        border-radius:32px;
+        background:rgba(255,255,255,0.07);
+        backdrop-filter:blur(20px);
+        border:1px solid rgba(255,255,255,0.25);
+        box-shadow:inset 0 0 14px rgba(255,255,255,0.1), 0 10px 35px rgba(0,0,0,0.45);
+        position:relative;
+    }
+
+    .card-header{
+        display:flex;
+        align-items:center;
+        margin-bottom:20px;
+    }
+
+    .avatar{
+        width:54px;height:54px;
+        border-radius:16px;
+        overflow:hidden;
+        border:1.5px solid rgba(255,255,255,0.4);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;}
+
+    .header-text{margin-left:12px;}
+    .username{color:white;font-size:22px;font-weight:900;}
+    .subscribers{color:#cfe0ff;font-size:14px;margin-top:4px;}
+
+    .title-row{
+        display:flex;
+        justify-content:space-between;
+        margin:12px 0 16px;
+        position:relative;
+    }
+    .title{color:white;font-size:24px;font-weight:900;}
+
+    /* 🔥 ДВИЖУЩИЙСЯ СТИКЕР 🎅 */
+    .sticker{
+        position:absolute;
+        top:-35px;
+        right:0;
+        font-size:38px;
+        animation: moveSticker 6s infinite ease-in-out;
+    }
+
+    @keyframes moveSticker{
+        0% { transform:translateX(0) rotate(0deg); }
+        25%{ transform:translateX(-40px) rotate(-10deg); }
+        50%{ transform:translateX(-80px) rotate(8deg); }
+        75%{ transform:translateX(-40px) rotate(-6deg);}
+        100%{ transform:translateX(0) rotate(0deg);}
+    }
+
+    .links{
+        display:flex;
+        flex-direction:column;
+        gap:20px;
+    }
+
+    /* GLASS кнопки */
+    .link-card{
+        display:flex;
+        align-items:center;
+        padding:18px 20px;
+        border-radius:22px;
+        text-decoration:none;
+
+        background:rgba(255,255,255,0.05);
+        border:1.5px solid rgba(255,255,255,0.25);
+        backdrop-filter:blur(15px);
+
+        box-shadow:
+            inset 0 0 16px rgba(255,255,255,0.12),
+            0 0 18px rgba(255,255,255,0.14);
+
+        transition:0.3s ease;
+        position:relative;
+    }
+
+    .link-card:hover{
+        transform:translateY(-4px);
+        background:rgba(255,255,255,0.10);
+        border-color:rgba(255,255,255,0.55);
+        box-shadow:
+            inset 0 0 26px rgba(255,255,255,0.20),
+            0 0 28px rgba(255,255,255,0.25);
+    }
+
+    .link-icon{
+        width:52px;
+        height:52px;
+        border-radius:14px;
+        padding:6px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        background:rgba(255,255,255,0.10);
+        border:1px solid rgba(255,255,255,0.35);
+        backdrop-filter:blur(8px);
+
+        box-shadow:
+            0 0 10px rgba(255,255,255,0.25),
+            inset 0 0 10px rgba(255,255,255,0.15);
+
+        transition:0.3s ease;
+    }
+
+    .link-card:hover .link-icon{
+        transform:scale(1.08);
+        box-shadow:
+            0 0 16px rgba(255,255,255,0.55),
+            inset 0 0 16px rgba(255,255,255,0.25);
+        border-color:white;
+        background:rgba(255,255,255,0.18);
+    }
+
+    .link-icon img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        filter:drop-shadow(0 0 6px rgba(255,255,255,0.45))
+               drop-shadow(0 0 12px rgba(255,255,255,0.25));
+        transition:.3s;
+    }
+
+    .link-card:hover img{
+        filter:drop-shadow(0 0 10px rgba(255,255,255,0.75))
+               drop-shadow(0 0 16px rgba(180,200,255,0.5));
+    }
+
+    .link-content{margin-left:14px;}
+    .link-label{color:white;font-size:18px;font-weight:800;}
+    .link-sub{color:#d9e4ff;font-size:14px;}
+
+    /* ❄ Снег */
+    .snow{
+        position:fixed;
+        top:-10px;
+        color:white;
+        opacity:0.85;
+        pointer-events:none;
+        animation:fall linear forwards;
+        filter:drop-shadow(0 0 6px white);
+    }
+
+    @keyframes fall{
+        to{transform:translateY(100vh);opacity:0;}
+    }
+
+    /* Музыка */
+    .music-btn{
+        position:fixed;
+        bottom:20px;
+        right:20px;
+        background:rgba(255,255,255,0.15);
+        padding:12px 18px;
+        border-radius:18px;
+        border:1px solid rgba(255,255,255,0.35);
+        color:white;
+        backdrop-filter:blur(12px);
+        cursor:pointer;
+    }
+</style>
+</head>
+<body>
+
+<audio id="music" loop>
+    <source src="Jinglee Bels  – ID Christmas Mix.mp3" type="audio/mpeg">
+</audio>
+
+<div class="music-btn" id="toggleMusic">🔊 Музыка</div>
+
+<div class="card">
+    <div class="card-header">
+        <div class="avatar"><img src="1.jpeg"></div>
+        <div class="header-text">
+            <div class="username">Qorbobo</div>
+            <div class="subscribers">
+                #1 🎅 Дед Мороз в игре<br>
+                🔫 CS:GO — Qorbobo
+            </div>
+        </div>
+    </div>
+
+    <div class="title-row">
+        <div class="title">Мои ссылки</div>
+
+        <!-- 🔥 ДВИГАЮЩИЙСЯ СТИКЕР -->
+        <div class="sticker">🎅</div>
+    </div>
+
+    <div id="linksContainer" class="links"></div>
+</div>
+
+<script>
+/* ссылки */
+const links=[
+    {name:"INSTAGRAM",sub:"@instagram",url:"https://www.instagram.com/qorboboferg",icon:"instagram.png"},
+    {name:"TIK TOK",sub:"Tik Tok",url:"https://www.tiktok.com/@qorboboferg",icon:"tik.png"},
+    {name:"STEAM",sub:"steam profile",url:"https://steamcommunity.com/profiles/76561198786741237/",icon:"steam.png"},
+];
+
+const container=document.getElementById("linksContainer");
+links.forEach(l=>{
+    const card=document.createElement("a");
+    card.className="link-card";
+    card.href=l.url;
+    card.target="_blank";
+    card.innerHTML=`
+        <div class="link-icon"><img src="${l.icon}"></div>
+        <div class="link-content">
+            <div class="link-label">${l.name}</div>
+            <div class="link-sub">${l.sub}</div>
+        </div>`;
+    container.appendChild(card);
+});
+
+/* снег */
+function snow(){
+    const s=document.createElement("div");
+    s.className="snow";
+    s.innerHTML="❄";
+    s.style.left=Math.random()*innerWidth+"px";
+    s.style.fontSize=(Math.random()*12+14)+"px";
+    s.style.animationDuration=(Math.random()*5+4)+"s";
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),9000);
+}
+setInterval(snow,150);
+
+/* Музыка */
+const music=document.getElementById("music");
+const btn=document.getElementById("toggleMusic");
+let playing=false;
+
+btn.onclick=()=>{
+    if(playing){
+        music.pause();
+        btn.innerText="🔈 Музыка";
+    } else {
+        music.play();
+        btn.innerText="🔊 Музыка";
+    }
+    playing=!playing;
+};
+</script>
+
+</body>
+</html>
