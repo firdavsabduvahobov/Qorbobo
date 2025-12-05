@@ -1,0 +1,89 @@
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      scroll-behavior: smooth;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #222;
+      color: white;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header .logo img {
+      height: 50px; 
+      width: auto;
+    }
+    nav a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .banner {
+      background: black;
+      height: 250px; 
+      overflow: hidden; 
+    }
+    .banner img.banner-img {
+      width: 100%;        
+      height: 100%;       
+      object-fit: cover;  
+    }
+    .about {
+      display: flex;
+      padding: 40px;
+      background: white;
+    }
+    .about img {
+      width: 200px;
+      height: 250px;
+      background: #bbb;
+      margin-right: 20px;
+      object-fit: cover;
+    }
+    .roadmap-title {
+      text-align: center;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: bold;
+      background: #eee;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 12px;
+      text-align: center;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+    footer a {
+      color: #ccc;
+      margin: 0 8px;
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: white;
+    }
+    
