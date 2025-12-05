@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HW</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: azure;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .wrapper {
+      width: 100%;
+      max-width: 1050px;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 30px;
+    }
+
+    .menu div {
+      color: #888;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .menu div:hover {
+      color: black;
+    }
+
+    .card-body {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .card:hover { transform: translateY(-5px); }
+
+    .img-cover {
+      width: 100%;
+      height: 250px;
+      position: relative;
+      background-color: #f8f8f8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .img-cover img.prod {
+      width: 90%;
+      border-radius: 10px;
+    }
+
+    .img-cover p {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 3px 8px;
+      border-radius: 15px;
+      background-color: #1e90ff;
+      color: white;
+      font-size: 12px;
+    }
+
+    img.like, img.comp {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background-color: white;
+      padding: 5px;
+      margin-top: 5px;
+      visibility: hidden;
+    }
+
+    img.comp { top: 45px; }
+
+    .fast {
+      position: absolute;
+      bottom: 30px;
+      left: 45%;
+      transform: translateX(-40%);
+      background-color: rgba(30,144,255,0.9);
+      color: white;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      visibility: hidden;
+      transition: 0.3s;
+    }
+
+    .card:hover img.like,
+    .card:hover img.comp,
+    .card:hover .fast {
+      visibility: visible;
+    }
+
+    .card h4 {
+      font-size: 16px;
+      padding: 10px 15px 5px;
+    }
+
+    .split {
+      background-color: #eee;
+      padding: 5px 10px;
+      width: fit-content;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-left: 15px;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 18px;
+      color: #1e90ff;
+      padding-left: 15px;
+      margin-bottom: 10px;
+    }
+
+    /* Savatchaga tugmasi */
+    .add-to-cart {
+      display: block;
+      width: calc(100% - 30px);
+      margin: 0 auto 15px;
+      background-color: #1e90ff;
+      color: white;
+      text-align: center;
+      padding: 8px 0;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .add-to-cart:hover {
+      background-color: #0c75e0;
+      transform: scale(1.03);
+    }
+  h1 {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  color: blue;
+  margin: 30px 0;
+  transition: all 0.5s ease;
+}
+
+h1:hover {
+  color: darkblue;
+  transform: scale(1.1);
+}
+  </style>
+</head>
+<body>
+    <h1>Konstioner mahsulotlari </h1>
+  <div class="container">
+    <div class="wrapper">
+      <div class="menu">
+        <div>Narx bo‘yicha</div>
+        <div>Reyting bo‘yicha</div>
+        <div>Yangi kelganlar</div>
+        <div>Ommabopligi bo‘yicha</div>
+      </div>
+
+      <div class="card-body">
+        <!-- 1-karta -->
+        <div class="card">
+          <div class="img-cover">
+            <p>50-0-0</p>
+            <img class="like" src="heart.png" alt="">
+            <img class="comp" src="measurement.png" alt="">
+            <img class="prod" src="https://kattabozor.fra1.cdn.digitaloceanspaces.com/domain_offer_thumbnails/d316e050267211f089600242c0a8111d.jpg" alt="">
+            <span class="fast">TEZKOR KO‘RISH</span>
+          </div>
+          <h4>BERG Inverter Konditsioneri</h4>
+          <p class="split">613 217 so‘mdan / 18 oy</p>
+          <p class="price">8 999 000 so‘m</p>
+          <div class="add-to-cart">🛒 Savatchaga qo‘shish</div>
+        </div>
+         <div class="card">
+          <div class="img-cover">
+            <p>50-0-0</p>
+            <img class="like" src="heart.png" alt="">
+            <img class="comp" src="measurement.png" alt="">
+            <img class="prod" src="https://kattabozor.fra1.cdn.digitaloceanspaces.com/domain_offer_thumbnails/d316e050267211f089600242c0a8111d.jpg" alt="">
+            <span class="fast">TEZKOR KO‘RISH</span>
+          </div>
+          <h4>BERG Inverter Konditsioneri</h4>
+          <p class="split">613 217 so‘mdan / 18 oy</p>
+          <p class="price">9 999 000 so‘m</p>
+          <div class="add-to-cart">🛒 Savatchaga qo‘shish</div>
+        </div>
+         <div class="card">
+          <div class="img-cover">
+            <p>50-0-0</p>
+            <img class="like" src="heart.png" alt="">
+            <img class="comp" src="measurement.png" alt="">
+            <img class="prod" src="https://kattabozor.fra1.cdn.digitaloceanspaces.com/domain_offer_thumbnails/d316e050267211f089600242c0a8111d.jpg" alt="">
+            <span class="fast">TEZKOR KO‘RISH</span>
+          </div>
+          <h4>GOLD Konditsioneri</h4>
+          <p class="split">921 921 so‘mdan / 18 oy</p>
+          <p class="price">4 999 000 so‘m</p>
+          <div class="add-to-cart">🛒 Savatchaga qo‘shish</div>
+        </div>
+         <div class="card">
+          <div class="img-cover">
+            <p>50-0-0</p>
+            <img class="like" src="heart.png" alt="">
+            <img class="comp" src="measurement.png" alt="">
+            <img class="prod" src="https://kattabozor.fra1.cdn.digitaloceanspaces.com/domain_offer_thumbnails/d316e050267211f089600242c0a8111d.jpg" alt="">
+            <span class="fast">TEZKOR KO‘RISH</span>
+          </div>
+          <h4>BERG Inverter Konditsioneri</h4>
+          <p class="split">613 217 so‘mdan / 18 oy</p>
+          <p class="price">12 999 000 so‘m</p>
+          <div class="add-to-cart">🛒 Savatchaga qo‘shish</div>
+        </div>
+
+        <!-- 2-karta -->
+        <div class="card">
+          <div class="img-cover">
+            <p>50-0-0</p>
+            <img class="like" src="heart.png" alt="">
+            <img class="comp" src="measurement.png" alt="">
+            <img class="prod" src="https://kattabozor.fra1.cdn.digitaloceanspaces.com/domain_offer_thumbnails/d316e050267211f089600242c0a8111d.jpg" alt="">
+            <span class="fast">TEZKOR KO‘RISH</span>
+          </div>
+          <h4>BERG Inverter Konditsioneri</h4>
+          <p class="split">923 993 so‘mdan / 18 oy</p>
+          <p class="price">99 999 999 so‘m</p>
+          <div class="add-to-cart">🛒 Savatchaga qo‘shish</div>
+        </div>
+ <div class="card">
+          <div class="img-cover">
+            <p>50-0-0</p>
+            <img class="like" src="heart.png" alt="">
+            <img class="comp" src="measurement.png" alt="">
+            <img class="prod" src="https://kattabozor.fra1.cdn.digitaloceanspaces.com/domain_offer_thumbnails/d316e050267211f089600242c0a8111d.jpg" alt="">
+            <span class="fast">TEZKOR KO‘RISH</span>
+          </div>
+          <h4>BERG Inverter Konditsioneri</h4>
+          <p class="split">631 217 so‘mdan / 18 oy</p>
+          <p class="price">5 999 000 so‘m</p>
+          <div class="add-to-cart">🛒 Savatchaga qo‘shish</div>
+        </div>
+         <div class="card">
+          <div class="img-cover">
+            <p>50-0-0</p>
+            <img class="like" src="heart.png" alt="">
+            <img class="comp" src="measurement.png" alt="">
+            <img class="prod" src="https://kattabozor.fra1.cdn.digitaloceanspaces.com/domain_offer_thumbnails/d316e050267211f089600242c0a8111d.jpg" alt="">
+            <span class="fast">TEZKOR KO‘RISH</span>
+          </div>
+          <h4>BERG Inverter Konditsioneri</h4>
+          <p class="split">613 217 so‘mdan / 18 oy</p>
+          <p class="price">9 929 000 so‘m</p>
+          <div class="add-to-cart">🛒 Savatchaga qo‘shish</div>
+        </div>
+         <div class="card">
+          <div class="img-cover">
+            <p>50-0-0</p>
+            <img class="like" src="heart.png" alt="">
+            <img class="comp" src="measurement.png" alt="">
+            <img class="prod" src="https://kattabozor.fra1.cdn.digitaloceanspaces.com/domain_offer_thumbnails/d316e050267211f089600242c0a8111d.jpg" alt="">
+            <span class="fast">TEZKOR KO‘RISH</span>
+          </div>
+          <h4>Fendi Konditsioneri</h4>
+          <p class="split">200 000 so‘mdan / 10 oy</p>
+          <p class="price">1 000 000 so‘m</p>
+          <div class="add-to-cart">🛒 Savatchaga qo‘shish</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
